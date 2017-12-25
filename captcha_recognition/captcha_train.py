@@ -1,4 +1,4 @@
-#coding:utf-8
+﻿#coding:utf-8
 import string
 from create_captcha import generate_text_and_image
 
@@ -15,7 +15,7 @@ print("验证码文本最长字符数", CAPTCHA_LEN)
 
 def prepare_image(captcha_image):
     """
-    对于验证码进行一系列的准备工作，主要是将验证码由彩色变为黑白
+    对于验证码进行一系列的准备工作，主要是将验证码由彩色变为灰度
     ARGS：
     captcha_image：待转换的图片
     RETURNS：
