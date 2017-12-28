@@ -1,5 +1,5 @@
 #coding:utf-8
-    import string
+import string
 from create_captcha import generate_text_and_image
 
 import numpy as np
@@ -162,7 +162,6 @@ def train_crack_captcha_cnn():
     with tf.Session() as sess:
         merged = tf.summary.merge_all()
         train_write = tf.summary.FileWriter(LOG_DIR+'//train', sess.graph)
-        test_write = tf.summary.FileWriter(LOG_DIR+'//test')
         sess.run(tf.global_variables_initializer())
 
         step = 0
@@ -181,7 +180,7 @@ def train_crack_captcha_cnn():
                 print(step, acc)
                 if step % 600 == 0 and step != 0:
                     saver.save(sess, "./model/crack_capcha.model", global_step=step)
-                if acc > 0.98:
+                if acc > 0.96:
                     test_accuacy = 0
                     for i in range(100):
                         batch_x_test, batch_y_test = get_next_batch(100)
